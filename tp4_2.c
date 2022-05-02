@@ -81,7 +81,6 @@ bool preguntarProgreso(){
 void mostrarUna (tareas * tarea){
     printf("ID tarea %d\n", tarea->tareaID);
     printf("%s",tarea->descripcion);
-    /* puts(tareas->descripcion); */
     printf("\nDuración %d",tarea->duracion);
     printf("\n\n----------------------------------------------------------------------------\n");
 }
@@ -125,11 +124,11 @@ void liberarMemoria(tareas **pendientes,tareas **realizadas,int cantidad){
 void buscar(tareas **pendientes,tareas **realizadas, int cantidad){
 
     printf("Donde desea buscar?\n1)En Tareas Pendientes\n2)En Tareas Realizadas\n");
-    int op;
-    scanf("%d",&op);
+    int opcion;
+    scanf("%d",&opcion);
     fflush(stdin);
     getchar();
-    switch (op){
+    switch (opcion){
         case 1:
             printf("\nIngrese la palabra clave de la tarea que desea buscar: ");
             char *aux=(char*)malloc(sizeof(char)*100);
